@@ -15,7 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = ['A'];
+        $products = ['A','B','C'];
 
         return $this->render('products/index.html.twig', array('products' => $products));
     }
