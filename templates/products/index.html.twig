@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Products list
+{% endblock %}
+
+{% block body %}
+
+    {% if products %}
+        <table id="products" class="table table-striped">
+            <thread>
+                <tr>
+                    <th>Product name</th>
+                    <th>Actions</th>
+                </tr>
+            </thread>
+            <tbody>
+                {% for product in products %}
+                    <tr>
+                        <td>{{ product }}</td>
+                        <td></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </tbody>
+    </table>
+{% else %}
+    <p>No products to display</p>
+{% endif %}{% endblock %}{% block javascripts %}
+<script src=""></script>{% endblock %}

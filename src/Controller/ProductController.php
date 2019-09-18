@@ -4,10 +4,10 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
-class ProductController
+class ProductController extends Controller
 {
     /**
      * @Route("/", name="products-list")
@@ -15,10 +15,8 @@ class ProductController
      */
     public function index()
     {
-        $number = random_int(0, 100);
+        $products = ['A'];
 
-        return new Response(
-            '<html><body>Lucky number: '.$number.'</body></html>'
-        );
+        return $this->render('products/index.html.twig', array('products' => $products));
     }
 }
